@@ -7,12 +7,10 @@ import csv
 def main():
     driver = proxy(False)
     driver = login(driver)
-    # temp_objects = get_obj_list(driver)
+    temp_objects = get_obj_list(driver)
 
     driver.get('https://dash.getsitecontrol.com/sites/41393/report')
     time.sleep(5)
-
-    temp_objects = [[82643, '1. Тигрёнок в наушниках'], [82733, '2. Полосатый гармонист'], [82736, '3. Лесной саксофонист'], [82737, '4. Звёздная вокалистка'], [82738, '5. Восьминогий флейтист']]
 
     objects = get_data(driver, temp_objects)
     save_data(objects)
