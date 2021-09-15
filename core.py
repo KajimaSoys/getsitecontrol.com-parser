@@ -86,7 +86,7 @@ def get_data(driver, objects):
     k = 1
     for item in objects:
         time.sleep(1)
-        driver.get(f'https://dash.getsitecontrol.com/api/v1/widgets/{str(item[0])}/responses_summary?country=&from=-14d&utm_source_medium=')
+        driver.get(f'https://dash.getsitecontrol.com/api/v1/widgets/{str(item[0])}/responses_summary?country=&utm_source_medium=')
         try:
             response = driver.find_element_by_tag_name('body').text
             json_list = json.loads(response)
